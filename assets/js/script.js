@@ -1,80 +1,72 @@
 var questions = [
     {
         question: "What is 1 + 1?",
-        answer1: "1",
-        answer2: "3",
-        answer3: "2",
-        answer4: "4", 
+        answer1: ["1", "2", "3", "4"],
         answer: 2
     },
     {
         question: "What is 2 + 1?",
-        answer1: "1",
-        answer2: "3",
-        answer3: "2",
-        answer4: "4", 
+        answer1: ["1", "2", "3", "4"], 
         answer: 3
     },
     {
         question: "What is 3 + 1?",
-        answer1: "1",
-        answer2: "3",
-        answer3: "2",
-        answer4: "4", 
+        answer1: ["1", "2", "3", "4"],
         answer: 4
     },
     {
         question: "What is 2 + 2?",
-        answer1: "1",
-        answer2: "3",
-        answer3: "2",
-        answer4: "4", 
+        answer1: ["1", "2", "3", "4"],
         answer: 4
     },
     {
         question: "What is 15 + 1?",
-        answer1: "1",
-        answer2: "16",
-        answer3: "2",
-        answer4: "4", 
+        answer1: ["1", "16", "2", "4"],
         answer: 16
     },
 ]
 
+var currentQuestion = {};
 var time = 60;
 var timeEl = document.getElementById('timer');
-var startEl = document.getElementById('container');
-var timerId = setInterval(countdown, 1000);
+var startEl = document.getElementById('start-page');
+var container = document.getElementById('container');
+var timerId;
 var score = 0;
-var penalty = -5;
-var rightAnswer = true;
+var penalty = 5;
 var questionCounter = 0;
+var correctScore = 5;
+var questionList = document.createElement("ul");
 
-function howToPlay() {
-    var rules = document.getElementById('rules');
-    rules.style.display = "block";
-}
 
 function countdown() {
     if (time >= 1) {
         timeEl.innerHTML = time + " seconds remaining";
         time--;
     } else {
-        clearInterval();
         endGame();
     }
 }
 
 function startGame() {
-    container.innerHTML = "";
 
+    timerId = setInterval(countdown, 1000);
+    
+    getQuestion();
+}
+
+function getQuestion() {
+    startEl.innerHTML = "";
+    
     for (var i = 0; i < questions.length; i++) {
-        
+        var questionAsked = questions[questionCounter].question;
+        var answers = questions[questionCounter].answer1;
+        startEl.innerHTML = questionAsked + answers;
     }
 }
 
 function endGame() {
-
+    clearInterval(timerId);
 }
 
 
@@ -86,3 +78,5 @@ function endGame() {
 // wrong answers will subtract time
 // once time runs out or questions are finished game will end
 // score will be logged to localstorage
+
+// function to call questions

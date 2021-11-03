@@ -8,39 +8,25 @@
     <title>Trivia</title>
 </head>
 <body>
-    <div id="timer"></div>
-    
+    <header>
+        <div id="timer"></div>
+    </header>
+
     <div id="container">
-        <h1>Press Your Luck!</h1>
-
-        
-        
-        <div class="container-questions">
-            <div id="question">question 1</div>
-            <div class="answer-container">
-                <p class="answer">1 this is an answer</p>
-            </div>    
-            <div class="answer-container">
-                <p class="answer">2 this is an answer</p>
-            </div>  <div class="answer-container">
-                <p class="answer">3 this is an answer</p>
-            </div>  <div class="answer-container">
-                <p class="answer">4 this is an answer</p>
+        <div id="start-page" class="style">
+            <h1>Press Your Luck!</h1>
+            <div class="info">
+                <ol>
+                    <li>1. You have 1 minute to get through 10 questions.</li>  
+                    <li>2. Each right answer will net you 5 points.</li> 
+                    <li>3. But be careful, each wrong answer will deduct 5 seconds from the timer.</li>  
+                    <li>4. Any remaining seconds will be added as a bonus to your score.</li>
+                </ol>
             </div>
+            <button id="start" onclick="startGame()">Start!</button>
         </div>
-
-        <!-- score tracker -->
-        <button id="how-to" onclick="howToPlay()">How to Play</button>
-        <button id="start" onclick="startGame()">Start!</button>
         
-        <div id="rules" class="info">
-            <ol>
-                <li>1. You have 1 minute to get through 10 questions.</li>  
-                <li>2. Each right answer will net you 10 points.</li> 
-                <li>3. But be careful, each wrong answer will deduct 5 seconds from the timer.</li>  
-                <li>4. Any remaining seconds will be added as a bonus to your score.</li>
-            </ol>
-        </div>
+        
     </div>
     <script src="./assets/js/script.js"></script>
 </body>

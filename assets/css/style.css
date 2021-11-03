@@ -27,39 +27,27 @@ h1 {
     font-size: 8em;
 }
 
-.container-questions {
-    display: none;
-}
-
-.answer-container {
-    margin-bottom: 0.5rem;
-    padding: 1.25rem;
-    width: 100%;
-    min-width: 75rem;
-    border-radius: 2px;
-    background: var(--tertiary-color);
-    font-size: 1.75em;
-}
-
-.answer-container:hover {
-
+#container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 0 auto;
 }
 
 .info {
-    margin: 0;
+    margin: 100px auto;
     width: 50rem;
     background: var(--secondary-color);
     color: var(--primary-color);
-    display: none;
     font-size: 1.5em;
 }
 
-ol {
-    text-align: center;
-}
-
-ol li {
-    padding: 1em;
+.style {
+    color: whitesmoke;
+    font-size: 1.5em;
 }
 
 button {
